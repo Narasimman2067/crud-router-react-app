@@ -8,6 +8,7 @@ import {
   TextField,
   Typography,
 } from "@mui/material";
+import Base from "../Base/Base";
 export function EmployeeDetails() {
   // implement of the data
 
@@ -99,22 +100,31 @@ export function EmployeeDetails() {
 
   return (
     <div>
+      <Base
+    heading="batch Details"
+    description="all user details"
+    ></Base>
       <div className="input-div">
         <TextField
+          required
           id="outlined-basic"
           label="Enter your id"
           variant="outlined"
           onChange={(event) => setId(event.target.value)}
           value={id}
         />
+           
+  
         <TextField
-          id="outlined-basic"
+         required
+          id="outlined-required"
           label="Enter your name"
           variant="outlined"
           onChange={(event) => setName(event.target.value)}
           value={Name}
         />
         <TextField
+         required
           id="outlined-basic"
           label="Enter your batch"
           variant="outlined"
@@ -122,6 +132,7 @@ export function EmployeeDetails() {
           value={Batch}
         />
         <TextField
+          required="text"
           id="outlined-basic"
           label="Enter your gender"
           variant="outlined"
@@ -129,6 +140,7 @@ export function EmployeeDetails() {
           value={Gender}
         />
         <TextField
+        required={Number}
           id="outlined-basic"
           label="Enter your experiences"
           variant="outlined"
@@ -196,6 +208,7 @@ export function EmployeeDetails() {
              
              
               <Button
+              
                 onClick={() => deleteEmployeesData(employee.id)}
                 size="small"
                 variant="contained"
@@ -208,6 +221,15 @@ export function EmployeeDetails() {
           </Card>
           </div>
         ))}
+      </div>
+      <div>
+      <footer className='footer-div'>
+                <p>
+                😍Thank you to visit this page😍
+               
+                </p>
+             
+            </footer>
       </div>
     </div>
   );

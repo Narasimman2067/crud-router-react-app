@@ -3,11 +3,12 @@
   margin: 0%;
   padding: 0px;
   scroll-behavior: smooth;
-  background-color:grey;
+  /* background-color:grey; */
   height:filled;
 }
 html{
   scroll-behavior: smooth;
+  
 }
 .footer-div{
   padding-top: 20%;
@@ -69,9 +70,21 @@ padding:5% ;
   border: 1px solid black;
   box-shadow: 2px 5px 10px black;
   text-transform: capitalize;
-  background-color: bisque;
+  background-color: bisque !important;
  
   
+}
+.search-btn{
+  display:flex;
+  justify-content: center;
+margin: 50%;
+
+  background-color: beige;
+  color: black;
+
+  border-radius: 1%;
+ 
+ 
 }
 .input-div{
   display:grid;
@@ -93,7 +106,7 @@ padding:5% ;
     display: grid;
     grid-template-columns: repeat(2,1fr);
     gap:1rem;
-    background-color:red;
+    background-color:red !important;
     padding-left:2%;
     
     height: auto;
@@ -129,7 +142,7 @@ padding:5% ;
     display: grid;
     grid-template-columns: repeat(2,1fr);
     gap:1rem;
-    background-color:blue;
+    background-color:blue ;
     padding: 2%;
    
     

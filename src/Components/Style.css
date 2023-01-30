@@ -1,0 +1,103 @@
+.App {
+    text-align: center;
+    margin: 0%;
+    padding: 0px;
+    scroll-behavior: smooth;
+  
+   
+    height:filled;
+  }
+html{
+  background-color: brown !important;
+  box-sizing: content-box;
+}
+.color-div{
+  padding: 10%;
+  /* margin-top: 5%; */
+  background-color:bisque;
+  border-radius: 2%;
+ 
+  margin-bottom: 20%;
+  color:blue;
+
+  
+  
+}
+
+.welcome-div{
+  display:grid;
+  justify-content: center;
+  margin-top: 10%;
+  margin-left: 10%;
+  margin-right: 10%;
+  font-size:20px;
+  font-style: italic;
+  font-family:algerian;
+  background-color:blueviolet;
+  border-top-right-radius: 20%;
+  border-bottom-left-radius: 20%;
+  border-top-left-radius: 1%;
+  border-bottom-right-radius: 1%;
+  box-shadow: 5px 5px 10px black;
+  color:greenyellow;
+  width: 80vw;
+  height: 58vh;
+} 
+.nopage{
+    background-color: bisque !important;
+}
+.search{
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  height: 40px;
+}
+@media (max-width:900px)
+
+{
+  html{
+    background-image:repeating-conic-gradient(red 60%,white 10%,yellow) ;
+  }
+  .welcome-div{
+    display: flex;
+    justify-content: center;
+    margin-top: 25%;
+    margin-left: 10%;
+    margin-right: 10%;
+    font-size:20px;
+    font-style: italic;
+    font-family:algerian;
+    background-color:blueviolet;
+    border-top-right-radius: 20%;
+    border-bottom-left-radius: 20%;
+    border-top-left-radius: 1%;
+    border-bottom-right-radius: 1%;
+    box-shadow: 5px 5px 10px black;
+    color:aqua;
+    width: 80vw;
+    height: 58vh;
+} 
+.color-div{
+  display:grid;
+  height:auto;
+  padding:1%;
+  margin-top: 5%;
+  margin-top:30%;
+  margin-bottom:0%;
+  padding-top:1%;
+  width: 50vw;
+  height: 40vh;
+  margin-right: 10px;
+  border-radius: 10%;
+  background-color:bisque;
+  color: blue;
+  }
+  .search{
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    height: 40px;
+
+   
+  }
+}

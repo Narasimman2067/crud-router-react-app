@@ -16,13 +16,7 @@ function Base ({heading,description,children}){
             </main>
            
         </div>
-        <footer className='footer-div'>
-                <p>
-                😍Thank you to visit this page😍
-               
-                </p>
-             
-            </footer>
+       
         </div>
     )
     }
