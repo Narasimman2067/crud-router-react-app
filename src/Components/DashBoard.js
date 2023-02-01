@@ -2,8 +2,10 @@ import React from 'react'
 
 import { Button } from '@mui/material'
 import Base from '../Base/Base'
+import { useHistory } from 'react-router-dom'
 
 function  DashBoard (){
+  const history =useHistory("")
   return (
     <Base
      heading="Welcome to the Dashboard"
@@ -13,6 +15,7 @@ function  DashBoard (){
         variant="contained" 
         color='primary'
         size='large'
+        onClick={()=>history.push("/")}
         >
             Home
         </Button>

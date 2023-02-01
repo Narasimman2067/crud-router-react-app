@@ -8,8 +8,21 @@
     height:filled;
   }
 html{
-  background-color: brown !important;
+  /* background-color: brown; */
   box-sizing: content-box;
+}
+.login-div{
+  padding: 10%;
+  margin-top: 0%;
+  background-color:yellowgreen;
+  border-radius: 2% 30%;
+  box-shadow: 2px 10px 20px black;
+ font-family: algerian;
+  margin-bottom: 0%;
+  color:blue;
+  width: fit-content;
+  margin-left: 25%;
+  
 }
 .color-div{
   padding: 10%;
@@ -27,7 +40,7 @@ html{
 .welcome-div{
   display:grid;
   justify-content: center;
-  margin-top: 10%;
+  margin-top: 1%;
   margin-left: 10%;
   margin-right: 10%;
   font-size:20px;
@@ -61,7 +74,7 @@ html{
   .welcome-div{
     display: flex;
     justify-content: center;
-    margin-top: 25%;
+    margin-top:2%;
     margin-left: 10%;
     margin-right: 10%;
     font-size:20px;
@@ -99,5 +112,17 @@ html{
     height: 40px;
 
    
+  }
+  .login-div{
+    padding: 10%;
+    box-shadow: 2px 10px 20px black;
+    background-color:orange;
+    border-radius:30% 5%;
+   font-family: algerian;
+    margin-bottom: 20%;
+    color:blue;
+    width: fit-content;
+    margin-left: 13%;
+    
   }
 }

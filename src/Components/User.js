@@ -9,10 +9,10 @@ import {
   Typography,
 } from "@mui/material";
 import Base from "../Base/Base";
-export function EmployeeDetails() {
+import { useHistory } from "react-router-dom";
+export function EmployeeDetails({employeesData,setEmployees}) {
   // implement of the data
-
-  const [employeesData, setEmployees] = useState(data);
+ const history=useHistory();
   const [editId, setEditId] = useState("");
   const [id, setId] = useState("");
   const [Name, setName] = useState("");
@@ -216,6 +216,15 @@ export function EmployeeDetails() {
               >
                 delete
                 </Button>
+                <Button
+              
+              onClick={() =>history.push(`/employee/${id}`)}
+              size="small"
+              variant="contained"
+              color="secondary"
+            >
+              viewoptions
+              </Button>
              
             </CardActions>
           </Card>
