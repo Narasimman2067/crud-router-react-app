@@ -65,6 +65,35 @@ html{
   gap: 2rem;
   height: 40px;
 }
+.toolbtn{
+  display:grid;
+  gap: 2rem;
+}
+.edit-div{
+  font-family: algerian;
+  margin: 0%;
+  padding-top: 0%;
+  color: blueviolet;
+  background-color: aqua;
+  display: flex;
+  justify-content:center;
+}
+.btn-basic:hover{
+  background-color: aqua;
+  font-size: large;
+  animation:20s;
+}
+.btn-basic{
+  display: flex;
+  gap: 2rem;
+  margin-right: 10px;
+  border-radius:50% 10%;
+  width: fit-content;
+  box-shadow: 2px 1px 2px whitesmoke;
+  
+  cursor: pointer;
+  background-color: rgb(191, 227, 119);
+}
 @media (max-width:900px)
 
 {

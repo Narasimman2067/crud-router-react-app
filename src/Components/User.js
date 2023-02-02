@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { data } from "../Data/data";
+
 import {
   Button,
   Card,
@@ -10,36 +10,38 @@ import {
 } from "@mui/material";
 import Base from "../Base/Base";
 import { useHistory } from "react-router-dom";
+
+
 export function EmployeeDetails({employeesData,setEmployees}) {
   // implement of the data
  const history=useHistory();
-  const [editId, setEditId] = useState("");
-  const [id, setId] = useState("");
-  const [Name, setName] = useState("");
-  const [Batch, setBatch] = useState("");
-  const [Gender, setGender] = useState("");
-  const [Experiences, setExperience] = useState("");
+  // const [editId, setEditId] = useState("");
+  // const [id, setId] = useState("");
+  // const [Name, setName] = useState("");
+  // const [Batch, setBatch] = useState("");
+  // const [Gender, setGender] = useState("");
+  // const [Experiences, setExperience] = useState("");
  
-  const [showAdd, setShowAdd] = useState(true);
-  const [showUpdate, setShowUpdate] = useState(false);
+  // const [showAdd, setShowAdd] = useState(true);
+  // const [showUpdate, setShowUpdate] = useState(false);
 
-  const addNewEmployee = () => {
-    const newEmployee = {
-      id,
-      Name,
-      Batch,
-      Gender,
-      yearsOfExperience: Experiences,
-    };
-    // using spread operator to divide each by each element
-    setEmployees([...employeesData, newEmployee]);
-    // after add function done  immediately it refresh the input field
-    setId("");
-    setName("");
-    setBatch("");
-    setGender("");
-    setExperience("");
-  };
+  // const addNewEmployee = () => {
+  //   const newEmployee = {
+  //     id,
+  //     Name,
+  //     Batch,
+  //     Gender,
+  //     yearsOfExperience: Experiences,
+  //   };
+  //   // using spread operator to divide each by each element
+  //   setEmployees([...employeesData, newEmployee]);
+  //   // after add function done  immediately it refresh the input field
+  //   setId("");
+  //   setName("");
+  //   setBatch("");
+  //   setGender("");
+  //   setExperience("");
+  // };
 
   // delete a data
 
@@ -52,59 +54,61 @@ export function EmployeeDetails({employeesData,setEmployees}) {
 
   // update the form
 
-  const editandSelectEmployee = (employeeID) => {
+  // const editandSelectEmployee = (employeeID) => {
    
-    setShowAdd(false);
-    setShowUpdate(true)
+  //   setShowAdd(false);
+  //   setShowUpdate(true)
 
-    setEditId(employeeID);
-    const selectedData = employeesData.find(
-      (employee) => employee.id === employeeID
-    );
-    setId(selectedData.id);
-    setName(selectedData.Name);
-    setBatch(selectedData.Batch);
-    setGender(selectedData.Gender);
-    setExperience(selectedData.yearsOfExperience);
-  };
+  //   setEditId(employeeID);
+  //   const selectedData = employeesData.find(
+  //     (employee) => employee.id === employeeID
+  //   );
+  //   setId(selectedData.id);
+  //   setName(selectedData.Name);
+  //   setBatch(selectedData.Batch);
+  //   setGender(selectedData.Gender);
+  //   setExperience(selectedData.yearsOfExperience);
+  // };
 
-  const updateEmployeesData = () => {
-    // select and find the employee
+  // const updateEmployeesData = () => {
+  //   // select and find the employee
 
-    const editEmployeeindex = employeesData.findIndex(
-      (employee) => employee.id === editId
-    );
-    // we need the updated object
+  //   const editEmployeeindex = employeesData.findIndex(
+  //     (employee) => employee.id === editId
+  //   );
+  //   // we need the updated object
 
-    const updatedEmployeeObj = {
-      id,
-      Name,
-      Batch,
-      Gender,
-      yearsOfExperience: Experiences,
-    };
+  //   const updatedEmployeeObj = {
+  //     id,
+  //     Name,
+  //     Batch,
+  //     Gender,
+  //     yearsOfExperience: Experiences,
+  //   };
 
-    // change the selected specific array of data
-    employeesData[editEmployeeindex] = updatedEmployeeObj;
+  //   // change the selected specific array of data
+  //   employeesData[editEmployeeindex] = updatedEmployeeObj;
 
-    // set the employee data
-    setEmployees([...employeesData]);
-    setId("");
-    setName("");
-    setBatch("");
-    setGender("");
-    setExperience("");
-    setShowAdd(true);
-    setShowUpdate(false)
-  };
+  //   // set the employee data
+  //   setEmployees([...employeesData]);
+  //   setId("");
+  //   setName("");
+  //   setBatch("");
+  //   setGender("");
+  //   setExperience("");
+  //   setShowAdd(true);
+  //   setShowUpdate(false)
+  // };
 
   return (
     <div>
-      <Base
+      <h1 className="head-div">
+        All students Details</h1>
+      {/* <Base
     heading="batch Details"
     description="all user details"
-    ></Base>
-      <div className="input-div">
+    ></Base> */}
+      {/* <div className="input-div">
         <TextField
           required
           id="outlined-basic"
@@ -171,7 +175,7 @@ export function EmployeeDetails({employeesData,setEmployees}) {
             update data
           </Button>
           :""}
-     </div>
+     </div> */}
 
       <div className="main-card">
         {employeesData.map((employee, id) => (
@@ -196,7 +200,7 @@ export function EmployeeDetails({employeesData,setEmployees}) {
 
               
               <Button
-                onClick={() => editandSelectEmployee(employee.id)}
+                onClick={() =>history.push(`/edit/${id}/${employee.id}`)}
                 size="small"
                 variant="contained"
                 color="primary"

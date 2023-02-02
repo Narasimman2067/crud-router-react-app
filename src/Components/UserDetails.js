@@ -1,68 +1,70 @@
 import { Button, Card, CardActions, CardContent, Typography } from '@mui/material'
 import React, { useState } from 'react'
+import { useHistory } from 'react-router-dom';
 import Base from '../Base/Base';
 import { data } from '../Data/data';
 
 export function UserDetails ()  {
-    const [employeesData, setEmployees] = useState(data);
-    // const [editId, setEditId] = useState("");
+  const history =useHistory();
+    const [TeachersData, setTeachers] = useState(data);
+    // const [editId, setEdit] = useState("");
     // const [id, setId] = useState("");
     // const [Name, setName] = useState("");
     // const [Batch, setBatch] = useState("");
     // const [Gender, setGender] = useState("");
     // const [Experiences, setExperience] = useState("");
-   
-    
-    
 
-    // const deleteEmployeesData = (employeeID) => {
-    //     const removedEmployee = employeesData.filter(
-    //       (employee) => employee.id !== employeeID
-    //     );
-    //     setEmployees(removedEmployee);
-    //   };
-    
-    //   // update the form
-    
-    //   const editandSelectEmployee = (employeeID) => {
-    //    setEditId(employeeID);
-    //     const selectedData = employeesData.find(
-    //       (employee) => employee.id === employeeID
-    //     );
-    //     setId(selectedData.id);
-    //     setName(selectedData.Name);
-    //     setBatch(selectedData.Batch);
-    //     setGender(selectedData.Gender);
-    //     setExperience(selectedData.yearsOfExperience);
-    //   };
-    
-     
-    //     // select and find the employee
-    
-    //     const editEmployeeindex = employeesData.findIndex(
-    //       (employee) => employee.id === editId
-    //     );
-    //     // we need the updated object
-    
-    //     const updatedEmployeeObj = {
-    //       id,
-    //       Name,
-    //       Batch,
-    //       Gender,
-    //       yearsOfExperience: Experiences,
-    //     };
-    
-    //     // change the selected specific array of data
-    //     employeesData[editEmployeeindex] = updatedEmployeeObj;
-    
-    //     // set the employee data
-    //     setEmployees([...employeesData]);
-    //     setId("");
-    //     setName("");
-    //     setBatch("");
-    //     setGender("");
-    //     setExperience("");
-      
+    // delete Teachers data
+
+    const deleteTeachersData =(teachersID)=>{
+      const removedTeachers =TeachersData.filter(
+        (teachers)=>teachers.id !== teachersID
+      );
+      setTeachers(removedTeachers)
+    };
+
+    // to update the form
+
+    // const editandSelectTeachersData=(idx)
+    // setEdit(teacherID);
+    // const selectedData = TeachersData.find(
+    //   (Teachers) => (Teachers.id === editId)
+    // );
+    //   setId(selectedData.id);
+    //   setName(selectedData.Name);
+    //   setBatch(selectedData.Batch);
+    //   setGender(selectedData.Gender);
+    //   setExperience(selectedData.yearsOfExperience);
+
+    // // to edit a data write a functions
+
+    // // const updateteachersData =()=>{
+
+    // // }
+
+    // const editTeachersIndex =TeachersData.findIndex(
+    // (teachers)=>teachers.id === editId);
+
+    // // we need the updated object
+
+    // const updatedTeachersObj={
+    //   id,Name,Batch,Gender,yearsOfExperience:Experiences
+    // }
+
+    // // change the specific array of the index data
+
+    // TeachersData[editTeachersIndex]=updatedTeachersObj;
+
+    // // set the teachers data to the text field 
+    // // when edit button is clicked
+
+    // setTeachers([...TeachersData]);
+    // setId("");
+    // setName("");
+    // setBatch("");
+    // setGender("");
+    // setExperience("");
+   
       
   return (
     <div>
@@ -71,27 +73,27 @@ export function UserDetails ()  {
     description="all user details"
     ></Base>
          <div className="main-card">
-        {employeesData.map((employee, id) => (
+        {TeachersData.map((teachers, id) => (
           <div className="card-div" >
           <Card 
-          key={employee.id}>
+          key={teachers.id}>
             <CardContent className="content-div">
               <Typography gutterBottom variant="h5" component="div">
-                Name:{employee.Name}
+                Name:{teachers.Name}
               </Typography>
               <Typography variant="body2" color="text.secondary">
-                batch :{employee.Batch}
+                batch :{teachers.Batch}
               </Typography>
               <Typography variant="body2" color="text.secondary">
-                gender:{employee.Gender}
+                gender:{teachers.Gender}
               </Typography>
               <Typography variant="body2" color="text.secondary">
-                experience:{employee.yearsOfExperience}
+                experience:{teachers.yearsOfExperience}
               </Typography>
             </CardContent>
-            {/* <CardActions className="btn-div">
+            <CardActions className="btn-div">
              <Button
-                onClick={() => editandSelectEmployee(employee.id)}
+               onClick={() =>history.push("/user")} 
                 size="small"
                 variant="contained"
                 color="primary"
@@ -103,25 +105,16 @@ export function UserDetails ()  {
              
              
               <Button
-              
-                onClick={() => deleteEmployeesData(employee.id)}
+                onClick={() => deleteTeachersData(teachers)}
                 size="small"
                 variant="contained"
                 color="error"
               >
                 delete
                 </Button>
-                <Button
               
-              onClick={() => deleteEmployeesData(employee.id)}
-              size="small"
-              variant="contained"
-              color="secondary"
-            >
-              viewoptions
-              </Button>
              
-            </CardActions> */}
+            </CardActions>
           </Card>
           </div>
         ))}
@@ -135,7 +128,7 @@ export function UserDetails ()  {
              
             </footer>
       </div>
-    // </div>
+     </div>
   )
 }
 

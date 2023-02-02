@@ -7,19 +7,50 @@ function Base({ heading, description, children }) {
   const history = useHistory();
   return (
     <div>
-      <AppBar position="static">
+      <AppBar position="static" className="toolbtn">
         <Toolbar variant="dense">
-          <Button color="inherit"
-          onClick={()=>history.push("/")}
-          >Home</Button>
-          <Button color="inherit"
-           onClick={()=>history.push("/dashboard")}>About</Button>
-          <Button color="inherit"
-           onClick={()=>history.push("/user")}>User</Button>
-          <Button color="inherit"
-           onClick={()=>history.push("/login")}>login or signup</Button>
-         <Button color="inherit"
-          onClick={()=>history.push("/view")}>UserDetails</Button>
+
+          <Button color="inherit" 
+          onClick={() => history.push("/")}>
+            <button className="btn-basic">🏠</button>
+            
+            <span>Home</span>
+          </Button>
+          <Button color="inherit" 
+          onClick={() => history.push("/dashboard")}>
+            <button className="btn-basic">🕎</button>
+           
+            <span>About</span>
+          </Button>
+          <Button color="inherit" 
+          onClick={() => history.push("/user")}>
+           
+            <button className="btn-basic"
+            onClick={() => history.push("/user")}
+            >
+              <span>👤</span></button>
+            <span> User</span>
+          </Button>
+          <Button color="inherit" 
+          onClick={() => history.push("/login")}>
+            <button className="btn-basic">🔐</button>
+            
+            <span>Login</span>
+          </Button>
+          <Button color="inherit" 
+          onClick={() => history.push("/view")}>
+             <button className="btn-basic">🧑‍🏫</button>
+           
+            <span> UserDetails</span>
+            
+          </Button>
+          <Button color="inherit" 
+          onClick={() => history.push("/add")}>
+             <button className="btn-basic">🧑‍🏫</button>
+           
+            <span>Add Data</span>
+            
+          </Button>
         </Toolbar>
       </AppBar>
 
