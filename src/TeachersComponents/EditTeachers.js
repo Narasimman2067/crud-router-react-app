@@ -3,57 +3,56 @@ import React, { useEffect, useState } from 'react'
 import { useHistory, useParams } from 'react-router-dom'
 import Base from '../Base/Base';
 
-const EditStudent = ({employeesData,setEmployees}) => {
+export const EditTeachers = ({TeachersProfileData,setTeachersProfile}) => {
   const history=useHistory();
- 
-  const {id} = useParams();
+  const {idx} =useParams();
   
-  const [editId, setEditId] = useState("");
-  const [idx, setIdx] = useState("");
-  const [Name, setName] = useState("");
-  const [Batch, setBatch] = useState("");
-  const [Gender, setGender] = useState("");
-  const [Experiences, setExperience] = useState("");
-  const employee=employeesData[id]
+  const [updateId, setUpdateId] = useState("");
+  const [idxc, setIdxc] = useState("");
+  const [name, setName] = useState("");
+  const [batch, setBatch] = useState("");
+  const [gender, setGender] = useState("");
+  const [experiences, setExperience] = useState("");
+  const teachers=TeachersProfileData[idx]
 
  useEffect(()=>{
-  setEditId(employee.id);
- setIdx(employee.id);
- setName(employee.Name);
- setBatch(employee.Batch);
- setGender(employee.Gender);
- setExperience(employee.yearsOfExperience)
+  setUpdateId(teachers.idxc);
+ setIdxc(teachers.idxc);
+ setName(teachers.name);
+ setBatch(teachers.batch);
+ setGender(teachers.gender);
+ setExperience(teachers.experiences)
 
- },[]);
+ },[])
   
 
-  const updateEmployeesData = () => {
+  const updateTeachersProfileData = () => {
     // select and find the employee
 
-    const editEmployeeindex = employeesData.findIndex(
-      (employee) => employee.id === editId
+    const editTeachersProfileIndex = TeachersProfileData.findIndex(
+      (teachers) => teachers.idxc === updateId
     );
     // we need the updated object
 
-    const updatedEmployeeObj = {
-      id,
-      Name,
-      Batch,
-      Gender,
-      yearsOfExperience: Experiences,
+    const updatedTeachersProfileObj = {
+      idxc,
+      name,
+      batch,
+      gender,
+      experiences,
     };
 
     // change the selected specific array of data
-    employeesData[editEmployeeindex] = updatedEmployeeObj;
+    TeachersProfileData[editTeachersProfileIndex] =updatedTeachersProfileObj;
 
     // set the employee data
-    setEmployees([...employeesData]);
-    setIdx("");
+    setTeachersProfile([...TeachersProfileData]);
+    setIdxc("");
     setName("");
     setBatch("");
     setGender("");
     setExperience("");
-    history.push("/user")
+    history.push("/view")
    
   };
  
@@ -61,15 +60,15 @@ const EditStudent = ({employeesData,setEmployees}) => {
   //  <div>EditStudent{id} and employeeid {employeeid}</div>
   // )
   <Base>
-  <h1 className='edit-div'>Edit and Update</h1>
+  <h1 className='edit-div'>Edit Teachers Profile</h1>
      <div className="input-div">
       <TextField
           required
           id="outlined-basic"
           label="Enter your id"
           variant="outlined"
-          onChange={(event) => setIdx(event.target.value)}
-          value={idx}
+          onChange={(event) => setIdxc(event.target.value)}
+          value={idxc}
         />
            
   
@@ -79,7 +78,7 @@ const EditStudent = ({employeesData,setEmployees}) => {
           label="Enter your name"
           variant="outlined"
           onChange={(event) => setName(event.target.value)}
-          value={Name}
+          value={name}
         />
         <TextField
          required
@@ -87,7 +86,7 @@ const EditStudent = ({employeesData,setEmployees}) => {
           label="Enter your batch"
           variant="outlined"
           onChange={(event) => setBatch(event.target.value)}
-          value={Batch}
+          value={batch}
         />
         <TextField
           required="text"
@@ -95,7 +94,7 @@ const EditStudent = ({employeesData,setEmployees}) => {
           label="Enter your gender"
           variant="outlined"
           onChange={(event) => setGender(event.target.value)}
-          value={Gender}
+          value={gender}
         />
         <TextField
         required={Number}
@@ -103,14 +102,14 @@ const EditStudent = ({employeesData,setEmployees}) => {
           label="Enter your experiences"
           variant="outlined"
           onChange={(event) => setExperience(event.target.value)}
-          value={Experiences}
+          value={experiences}
         />
       </div>
       <Button
             size="small"
             variant="contained"
             color="secondary"
-            onClick={updateEmployeesData}
+            onClick={ updateTeachersProfileData}
           >
             update data
           </Button>
@@ -122,4 +121,4 @@ const EditStudent = ({employeesData,setEmployees}) => {
     )
 }
 
-export default EditStudent
+export default EditTeachers;

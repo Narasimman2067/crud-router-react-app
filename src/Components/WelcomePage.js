@@ -1,5 +1,6 @@
 import { Button } from '@mui/material'
 import React from 'react'
+import { useHistory } from 'react-router-dom'
 import Base from '../Base/Base'
 
 
@@ -7,34 +8,39 @@ import Base from '../Base/Base'
 
 
  export function WelcomePage ()  {
+  const history = useHistory();
   return (
     <div>
       <Base>
       <div className='welcome-div'>
         <h1 >welcome to our App</h1>
-        <div className="box-div">
+       
         <nav>
         <div className='color-div'>
          
          <h1>
-         please log in or sign up
+         please login to view the contents
          </h1>
-         <h3>
-         Authetication page
-         </h3>
+       
         
          <div className='search'>
-         <Button variant="contained" color="primary">
-             login
+         <Button
+         onClick={()=>history.push("/login")} 
+         variant="contained" color="primary">
+             students login
            </Button>
-           <Button variant="contained" color="secondary" size='large'>
-             signup
+           
+           <Button
+         onClick={()=>history.push("/teacherslogin")} 
+         variant="contained" color="secondary">
+             teachers login
            </Button>
+          
          </div>
          </div>
     </nav>
    </div>
-    </div>
+  
     </Base>
    
    

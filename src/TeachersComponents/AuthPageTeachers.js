@@ -2,21 +2,21 @@ import { Button,FormControl, FormLabel, Input, Typography } from '@mui/material'
 import React, {useState}from 'react'
 import {  useHistory } from 'react-router-dom'
 import Base from '../Base/Base'
-import { authdata } from '../Data/authdata'
+import { authteachers } from '../Data/authteachers'
 
-const AuthPage = () => {
-  const[auth, setAuth] = useState(authdata); 
-  const [loginName, setLogiName] = useState("");
+const AuthPageTeachers = () => {
+  const[auth, setAuth] = useState(authteachers); 
+  const [loginName, setLoginName] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState(false)
   const history  = useHistory()
 
-  const loginUser = () =>{
+  const loginUserDetails = () =>{
     if(loginName === auth[0].name 
       && password === auth[0].password) {
       localStorage.setItem("user-name", loginName);
       setError(false)
-      history.push("/user")
+      history.push("/view")
     } else {
       setError(true)
     }
@@ -27,7 +27,7 @@ const AuthPage = () => {
     <div>
     <Base>
    
-  <h2 className='login'>Students Login Page😍</h2>
+  <h2 className='login'>Teachers Login Page😍</h2>
  <div className = "login-page">
      
 
@@ -39,7 +39,7 @@ const AuthPage = () => {
               name="email"
               type="email"
               placeholder="name@gmail.com"
-              onChange= {(event)=>setLogiName(event.target.value)}
+              onChange= {(event)=>setLoginName(event.target.value)}
               value = {loginName}
             />
           </FormControl> {" "}
@@ -57,7 +57,7 @@ const AuthPage = () => {
 
           <Button className='login' 
            sx={{ mt: 1 }}
-           onClick= {loginUser}
+           onClick= {loginUserDetails}
           
            variant="contained"
                 color="primary"
@@ -76,7 +76,7 @@ const AuthPage = () => {
   </div>
  </Base>
  <div className='id-pwd'>
-  <h4>Email id:students</h4>
+  <h4>Email id:teachers</h4>
   <h4>password:pass</h4>
   </div>
   </div>
@@ -85,6 +85,4 @@ const AuthPage = () => {
   )
 }
 
-export default AuthPage;
-
-
+export default AuthPageTeachers;

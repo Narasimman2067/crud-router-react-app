@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 import {
   Button,
@@ -15,6 +15,14 @@ import { useHistory } from "react-router-dom";
 export function EmployeeDetails({employeesData,setEmployees}) {
   // implement of the data
  const history=useHistory();
+// this is the url where we went to sign in only 
+// if the password and login name correct otherwise 
+// it replace to register
+useEffect(()=>{
+if(!localStorage.getItem("user-name"))
+history.replace("/login")
+},[])
+
   // const [editId, setEditId] = useState("");
   // const [id, setId] = useState("");
   // const [Name, setName] = useState("");
@@ -102,6 +110,14 @@ export function EmployeeDetails({employeesData,setEmployees}) {
 
   return (
     <div>
+      <Base>
+      <div className="adddata">
+    <Button 
+    onClick={()=>history.push("/addstudents")} 
+    variant="contained"
+                color="secondary"
+    >Add Data</Button>
+    </div>
       <h1 className="head-div">
         All students Details</h1>
       {/* <Base
@@ -186,7 +202,7 @@ export function EmployeeDetails({employeesData,setEmployees}) {
               <Typography gutterBottom variant="h5" component="div">
                 Name:{employee.Name}
               </Typography>
-              <Typography variant="body2" color="text.secondary">
+              {/* <Typography variant="body2" color="text.secondary">
                 batch :{employee.Batch}
               </Typography>
               <Typography variant="body2" color="text.secondary">
@@ -194,7 +210,7 @@ export function EmployeeDetails({employeesData,setEmployees}) {
               </Typography>
               <Typography variant="body2" color="text.secondary">
                 experience:{employee.yearsOfExperience}
-              </Typography>
+              </Typography> */}
             </CardContent>
             <CardActions className="btn-div">
 
@@ -244,6 +260,7 @@ export function EmployeeDetails({employeesData,setEmployees}) {
              
             </footer>
       </div>
+      </Base>
     </div>
   );
 }

@@ -1,11 +1,16 @@
 import { Button, TextField } from '@mui/material'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useHistory } from 'react-router-dom';
 
 import Base from '../Base/Base'
 
 export function AddStudent({employeesData,setEmployees}) {
    const history=useHistory();
+
+   useEffect(()=>{
+    if(!localStorage.getItem("user-name"))
+    history.replace("/login")
+    },[])
   
     const [id, setId] = useState("");
     const [Name, setName] = useState("");
@@ -33,14 +38,14 @@ export function AddStudent({employeesData,setEmployees}) {
         setExperience("");
         history.push("/user")
       };
+  
     
   
   return (
+<div>
 
-   <Base
-   heading="Add a Student"
-   description="you can add a student"
-   >
+   <Base>
+  <h1 className='head'>you can add a student</h1>
      <div className="input-div">
       <TextField
           required
@@ -93,11 +98,8 @@ export function AddStudent({employeesData,setEmployees}) {
           >
             Add data
           </Button>
-     
-
-       
-         
-   </Base>
+        </Base>
+      </div>
   )
 }
 

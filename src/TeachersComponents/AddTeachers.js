@@ -3,34 +3,34 @@ import React, { useState } from 'react'
 import { useHistory } from 'react-router-dom';
 import Base from '../Base/Base';
 
-const UpdateStudents = ({employeesData,setEmployees}) => {
+export const AddTeachers = ({TeachersProfileData,setTeachersProfile}) => {
     const history=useHistory();
   
-    const [id, setId] = useState("");
-    const [Name, setName] = useState("");
-    const [Batch, setBatch] = useState("");
-    const [Gender, setGender] = useState("");
-    const [Experiences, setExperience] = useState("");
+    const [idxc, setIdxc] = useState("");
+    const [name, setName] = useState("");
+    const [batch, setBatch] = useState("");
+    const [gender, setGender] = useState("");
+    const [experiences, setExperience] = useState("");
    
    
     
-    const addNewEmployee = () => {
-        const newEmployee = {
-          id,
-          Name,
-          Batch,
-          Gender,
-          yearsOfExperience: Experiences,
+    const addNewTeachersProfile = () => {
+        const newTeachersProfile = {
+          idxc,
+          name,
+          batch,
+          gender,
+          experiences,
         };
         // using spread operator to divide each by each element
-        setEmployees([...employeesData, newEmployee]);
+        setTeachersProfile([...TeachersProfileData,newTeachersProfile]);
         // after add function done  immediately it refresh the input field
-        setId("");
+        setIdxc("");
         setName("");
         setBatch("");
         setGender("");
         setExperience("");
-        history.push("/user")
+        history.push("/view")
       };
     
 
@@ -39,8 +39,8 @@ const UpdateStudents = ({employeesData,setEmployees}) => {
   return (
 
    <Base
-   heading="Add a Student"
-   description="you can add a student"
+   heading="Add a Teacher"
+   description="you can add a teacher"
    >
      <div className="input-div">
       <TextField
@@ -48,8 +48,8 @@ const UpdateStudents = ({employeesData,setEmployees}) => {
           id="outlined-basic"
           label="Enter your id"
           variant="outlined"
-          onChange={(event) => setId(event.target.value)}
-          value={id}
+          onChange={(event) => setIdxc(event.target.value)}
+          value={idxc}
         />
            
   
@@ -59,7 +59,7 @@ const UpdateStudents = ({employeesData,setEmployees}) => {
           label="Enter your name"
           variant="outlined"
           onChange={(event) => setName(event.target.value)}
-          value={Name}
+          value={name}
         />
         <TextField
          required
@@ -67,7 +67,7 @@ const UpdateStudents = ({employeesData,setEmployees}) => {
           label="Enter your batch"
           variant="outlined"
           onChange={(event) => setBatch(event.target.value)}
-          value={Batch}
+          value={batch}
         />
         <TextField
           required="text"
@@ -75,7 +75,7 @@ const UpdateStudents = ({employeesData,setEmployees}) => {
           label="Enter your gender"
           variant="outlined"
           onChange={(event) => setGender(event.target.value)}
-          value={Gender}
+          value={gender}
         />
         <TextField
         required={Number}
@@ -83,14 +83,14 @@ const UpdateStudents = ({employeesData,setEmployees}) => {
           label="Enter your experiences"
           variant="outlined"
           onChange={(event) => setExperience(event.target.value)}
-          value={Experiences}
+          value={experiences}
         />
       </div>
         <Button
             size="small"
             variant="contained"
             color="primary"
-           onClick={addNewEmployee}
+           onClick={addNewTeachersProfile}
           >
             Add data
           </Button>
@@ -102,4 +102,4 @@ const UpdateStudents = ({employeesData,setEmployees}) => {
   )
 }
 
-export default UpdateStudents
+export default AddTeachers;

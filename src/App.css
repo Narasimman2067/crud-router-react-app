@@ -3,7 +3,7 @@
   margin: 0%;
   padding: 0px;
   scroll-behavior: smooth;
-  /* background-color:grey; */
+ 
   height:filled;
 }
 html{
@@ -20,6 +20,10 @@ html{
 
 
 }
+.login{
+  font-family:algerian;
+  color: brown;
+}
 
 
 .main-card{
@@ -27,8 +31,9 @@ html{
   grid-template-columns:repeat(3,1fr);
   gap: 2rem;
   border-radius: 3%;
-  background-color: red;
-  box-shadow: 2px 5px 10px black;
+  background-color: red; 
+
+  
  
 
 padding:5% ;
@@ -52,9 +57,9 @@ padding:5% ;
 }
 
 .head-div{
-  padding: 50px;
+  padding: 10px;
   font-family:algerian ;
-  color: blue;
+  color: rgb(9, 87, 243);
   text-decoration:underline;
 }
 .description-div{
@@ -106,9 +111,9 @@ margin: 50%;
     display: grid;
     grid-template-columns: repeat(2,1fr);
     gap:1rem;
-    background-color:red !important;
+    /* background-color:blue !important; */
     padding-left:2%;
-    
+    box-shadow: 5px 5px 10px red !important;
     height: auto;
    }
    .btn-div{
@@ -124,7 +129,7 @@ margin: 50%;
     display: grid;
     grid-template-columns: repeat(2,1fr);
     gap:1rem;
-    background-color:blue;
+    /* background-color:red; */
     padding: 2%;
    
     
@@ -142,7 +147,7 @@ margin: 50%;
     display: grid;
     grid-template-columns: repeat(2,1fr);
     gap:1rem;
-    background-color:blue ;
+    /* background-color:blue ; */
     padding: 2%;
    
     
